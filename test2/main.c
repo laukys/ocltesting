@@ -25,11 +25,7 @@ int main(void) {
     for(i = 0; i < LIST_SIZE; i++)
             printf("%.6f\n", A[i]);
     
-    printf("HELLO OPENCL");
-    printf("HELLO OPENCL");
-    printf("HELLO OPENCL");
-    printf("HELLO OPENCL");
-    printf("HELLO OPENCL");
+    printf("\n\n\nHELLO OPENCL\n\n\n");
     // Load the kernel source code into the array source_str
     FILE *fp;
     char *source_str;
