@@ -12,7 +12,7 @@
 int main(void) {
     // Create the two input vectors
     int i;
-    const int LIST_SIZE = 302*302*82;
+    const int LIST_SIZE = 100;
     float *A = (float*)malloc(sizeof(float)*LIST_SIZE);
     float *B = (float*)malloc(sizeof(float)*LIST_SIZE);
     for(i = 0; i < LIST_SIZE; i++) {
@@ -21,7 +21,15 @@ int main(void) {
     for(i = 1; i < LIST_SIZE; i++) {
         B[i] = A[i-1];
     }
-
+    
+    for(i = 0; i < LIST_SIZE; i++)
+            printf("%.6f\n", A[i]);
+    
+    printf("HELLO OPENCL");
+    printf("HELLO OPENCL");
+    printf("HELLO OPENCL");
+    printf("HELLO OPENCL");
+    printf("HELLO OPENCL");
     // Load the kernel source code into the array source_str
     FILE *fp;
     char *source_str;
