@@ -89,13 +89,13 @@ int main(void) {
     
     // Execute the OpenCL kernel on the list
     size_t global_item_size = LIST_SIZE; // Process the entire lists
-    size_t local_item_size = 3000; // Process in groups of 64
+    size_t local_item_size = 100; // Process in groups of 100
     ret = clEnqueueNDRangeKernel(command_queue, kernel, 1, NULL, 
             &global_item_size, &local_item_size, 0, NULL, NULL);
 
-    // Read the memory buffer C on the device to the local variable C
-    ret = clEnqueueReadBuffer(command_queue, a_mem_obj, CL_TRUE, 0, 
-            LIST_SIZE * sizeof(float), A, 0, NULL, NULL);
+    // Read the memory buffer A on the device to the local variable A
+    //ret = clEnqueueReadBuffer(command_queue, a_mem_obj, CL_TRUE, 0, 
+    //        LIST_SIZE * sizeof(float), A, 0, NULL, NULL);
 
     // Display the result to the screen
     for(i = 0; i < LIST_SIZE; i++)
