@@ -24,7 +24,9 @@ int main(void) {
     }
     
     for(i = 0; i < LIST_SIZE; i++)
-            printf("%.6f\n", A[i]);
+            printf("%.2f\n", A[i]);
+    for(i = 0; i < LIST_SIZE; i++)
+                printf("%.2f\n", B[i]);
     
     printf("\n\n\nHELLO OPENCL\n\n\n");
     // Load the kernel source code into the array source_str
