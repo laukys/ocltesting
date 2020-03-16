@@ -25,10 +25,13 @@ int main(void) {
     
     for(i = 0; i < LIST_SIZE; i++)
             printf("%.2f\n", A[i]);
+    
+    printf("\n\n\n BREAK \n\n\n");
+    
     for(i = 0; i < LIST_SIZE; i++)
                 printf("%.2f\n", B[i]);
     
-    printf("\n\n\nHELLO OPENCL\n\n\n");
+    printf("\n\n\n BREAK \n\n\n");
     // Load the kernel source code into the array source_str
     FILE *fp;
     char *source_str;
