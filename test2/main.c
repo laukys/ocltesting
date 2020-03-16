@@ -99,6 +99,7 @@ int main(void) {
     ret = clEnqueueNDRangeKernel(command_queue, kernel, 1, NULL, 
             &global_item_size, &local_item_size, 0, NULL, NULL);
     
+    clFinish(command_queue);
     
     // Read the memory buffer A on the device to the local variable C
     float  *C = (float*)malloc(sizeof(float)*LIST_SIZE);
