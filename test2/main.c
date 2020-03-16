@@ -90,8 +90,8 @@ int main(void) {
     cl_kernel kernel = clCreateKernel(program, "adam_map_36", &ret);
 
     // Set the arguments of the kernel
-    ret = clSetKernelArg(kernel, 0, sizeof(cl_mem), (void *)&a_mem_obj);
-    ret = clSetKernelArg(kernel, 1, sizeof(cl_mem), (void *)&b_mem_obj);
+    ret = clSetKernelArg(kernel, 0, sizeof(cl_mem), &a_mem_obj);
+    ret = clSetKernelArg(kernel, 1, sizeof(cl_mem), &b_mem_obj);
     
     // Execute the OpenCL kernel on the list
     size_t global_item_size = LIST_SIZE; // Process the entire lists
