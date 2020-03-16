@@ -18,6 +18,7 @@ int main(void) {
     for(i = 0; i < LIST_SIZE; i++) {
         A[i] = (rand()%100)*1.0/10; 
     }
+    B[0] = 0;
     for(i = 1; i < LIST_SIZE; i++) {
         B[i] = A[i-1];
     }
@@ -114,6 +115,7 @@ int main(void) {
     ret = clReleaseContext(context);
     free(A);
     free(B);
+    free(C);
     return 0;
 }
 
