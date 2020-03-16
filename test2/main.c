@@ -95,7 +95,7 @@ int main(void) {
     
     
     // Read the memory buffer A on the device to the local variable C
-    int *C = (float*)malloc(sizeof(float)*LIST_SIZE);
+    float  *C = (float*)malloc(sizeof(float)*LIST_SIZE);
     ret = clEnqueueReadBuffer(command_queue, a_mem_obj, CL_TRUE, 0, 
             LIST_SIZE * sizeof(float), C, 0, NULL, NULL);
 
