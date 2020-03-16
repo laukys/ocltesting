@@ -95,7 +95,7 @@ int main(void) {
     
     // Execute the OpenCL kernel on the list
     size_t global_item_size = LIST_SIZE; // Process the entire lists
-    size_t local_item_size = 100; // Process in groups of 100
+    size_t local_item_size = 64; // Process in groups of 100
     ret = clEnqueueNDRangeKernel(command_queue, kernel, 1, NULL, 
             &global_item_size, &local_item_size, 0, NULL, NULL);
     
@@ -103,11 +103,11 @@ int main(void) {
     // Read the memory buffer A on the device to the local variable C
     float  *C = (float*)malloc(sizeof(float)*LIST_SIZE);
     ret = clEnqueueReadBuffer(command_queue, a_mem_obj, CL_TRUE, 0, 
-            LIST_SIZE * sizeof(float), C, 0, NULL, NULL);
+            LIST_SIZE * sizeof(float), A, 0, NULL, NULL);
 
     // Display the result to the screen
     for(i = 0; i < LIST_SIZE; i++)
-        printf("%.6f\n", C[i]);
+        printf("%.6f\n", A[i]);
 
     // Clean up
     ret = clFlush(command_queue);
