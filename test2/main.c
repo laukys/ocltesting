@@ -105,10 +105,12 @@ int main(void) {
     float  *C = (float*)malloc(sizeof(float)*LIST_SIZE);
     ret = clEnqueueReadBuffer(command_queue, a_mem_obj, CL_TRUE, 0, 
             LIST_SIZE * sizeof(float), A, 0, NULL, NULL);
+    
+    clFinish(command_queue);
 
     // Display the result to the screen
     for(i = 0; i < LIST_SIZE; i++)
-        printf("%.6f\n", A[i]);
+        printf("%.2f\n", A[i]);
 
     // Clean up
     ret = clFlush(command_queue);
