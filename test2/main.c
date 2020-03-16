@@ -16,7 +16,7 @@ int main(void) {
     float *A = (float*)malloc(sizeof(float)*LIST_SIZE);
     float *B = (float*)malloc(sizeof(float)*LIST_SIZE);
     for(i = 0; i < LIST_SIZE; i++) {
-        A[i] = rand()*1.0/10; 
+        A[i] = (rand()%100)*1.0/10; 
     }
     for(i = 1; i < LIST_SIZE; i++) {
         B[i] = A[i-1];
